@@ -2,11 +2,13 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <cmath>
 #include "insertion.hpp"
 #include "merge.hpp"
 #include "heap.hpp"
 #include "quicksort.hpp"
 #include "counting.hpp"
+#include "radix.hpp"
 
 int main (int argc, char* argv[]) {
 
@@ -84,7 +86,12 @@ int main (int argc, char* argv[]) {
 		}
 		case 6:
 		{
-
+			int digits = 0, d = 0;
+			for(int i = 0; i < Array.size(); ++i) {
+				digits = log10(Array[i])+1;
+				if(digits > d) d = digits;
+			}
+			radixSort(Array, d);
 			break;
 		}
 		case 7:
