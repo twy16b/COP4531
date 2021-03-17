@@ -53,7 +53,7 @@ int main (int argc, char* argv[]) {
 	Heap A(Data);
 	heapSort(A);
 
-	inputfile.open(argv[1], std::ios::out | std::ios::trunc);
+	inputfile.open("output.txt", std::ios::out | std::ios::trunc);
 
 	std::cout << "After sort:\t";
 	for(int i = 0; i < A.size(); ++i) {

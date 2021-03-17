@@ -37,7 +37,7 @@ int main (int argc, char* argv[]) {
 
 	mergeSort(Data, 0, Data.size()-1);
 
-	inputfile.open(argv[1], std::ios::out | std::ios::trunc);
+	inputfile.open("output.txt", std::ios::out | std::ios::trunc);
 
 	std::cout << "After sort:\t";
 	for(int i = 0; i < Data.size(); ++i) {

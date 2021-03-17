@@ -28,7 +28,7 @@ int main (int argc, char* argv[]) {
 
 	inputfile.close();
 
-	std::cout << "Before sort:" << std::endl;
+	std::cout << "Before sort:\t";
 	for(int i = 0; i < Data.size(); ++i) {
 		std::cout << Data[i] << ' ';
 	}
@@ -36,9 +36,9 @@ int main (int argc, char* argv[]) {
 
 	quickSort(Data, 0, Data.size()-1);
 
-	inputfile.open(argv[1], std::ios::out | std::ios::trunc);
+	inputfile.open("output.txt", std::ios::out | std::ios::trunc);
 
-	std::cout << "After sort:" << std::endl;
+	std::cout << "After sort:\t";
 	for(int i = 0; i < Data.size(); ++i) {
 		std::cout << Data[i] << ' ';
 		inputfile << Data[i] << std::endl;

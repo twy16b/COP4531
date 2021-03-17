@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-void insertionSort(std::vector<int>&);
+void radixSort(std::vector<int> &A, int d);
 
 int main (int argc, char* argv[]) {
 
@@ -33,14 +33,15 @@ int main (int argc, char* argv[]) {
 	}
 	std::cout << std::endl;
 
-	insertionSort(Data);
+	int d = 2;
+	radixSort(Data, d);
 
-	inputfile.open("output.txt", std::ios::out | std::ios::trunc);
+	//inputfile.open("output.txt", std::ios::out | std::ios::trunc);
 
 	std::cout << "After sort:\t";
 	for(int i = 0; i < Data.size(); ++i) {
 		std::cout << Data[i] << ' ';
-		inputfile << Data[i] << std::endl;
+		//inputfile << Data[i] << std::endl;
 	}
 	std::cout << std::endl;
 
@@ -48,17 +49,8 @@ int main (int argc, char* argv[]) {
 
 }
 
-void insertionSort(std::vector<int> &A) {
+void radixSort(std::vector<int> &A, int d) {
 
-	int i, j, key;
-	for(j = 1; j < A.size(); ++j) {
-		key = A[j];
-		i = j - 1;
-		while(i >= 0 && A[i] > key) {
-			A[i+1] = A[i];
-			--i;
-		}
-		A[i+1] = key;
-	}
+	
 
 }
