@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "insertion.hpp"
 
 void insertionSort(std::vector<int>&);
 
@@ -45,20 +46,5 @@ int main (int argc, char* argv[]) {
 	std::cout << std::endl;
 
 	return 0;
-
-}
-
-void insertionSort(std::vector<int> &A) {
-
-	int i, j, key;
-	for(j = 1; j < A.size(); ++j) {
-		key = A[j];
-		i = j - 1;
-		while(i >= 0 && A[i] > key) {
-			A[i+1] = A[i];
-			--i;
-		}
-		A[i+1] = key;
-	}
 
 }
