@@ -3,7 +3,7 @@
 
 #include <vector>
 
-int partition(std::vector<int> &A, int p, int r) {
+int partition(std::vector<double> &A, int p, int r) {
 
 	int x = A[r];
 	int i = p-1;
@@ -21,7 +21,7 @@ int partition(std::vector<int> &A, int p, int r) {
 
 }
 
-void quickSort(std::vector<int> &A, int p, int r) {
+void quickSort(std::vector<double> &A, int p, int r) {
 
 	if(p < r) {
 		int q = partition(A,p,r);

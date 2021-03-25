@@ -18,7 +18,7 @@ int main (int argc, char* argv[]) {
 	int sortType;
 	std::fstream filestream;
 	std::string readline;
-	std::vector<int> Array;
+	std::vector<double> Array;
 
 	if(argc != 4) {
 		printf("Invalid arguments\n");
@@ -44,8 +44,11 @@ int main (int argc, char* argv[]) {
 		return 1;
 	}
 	
-	while(getline(filestream, readline)) {
-		Array.push_back(std::stoi(readline));
+	double inputDouble;
+	while(!filestream.eof()) {
+		filestream >> inputDouble;
+		//std::cout << "Input Double: " << inputDouble << std::endl;
+		Array.push_back(inputDouble);
 	}
 
 	filestream.close();
@@ -75,7 +78,7 @@ int main (int argc, char* argv[]) {
 		}
 		case 5:
 		{
-			std::vector<int> B (Array.size(),0);
+			std::vector<double> B (Array.size(),0);
 			int k = 0;
 			for(int i = 0; i < Array.size(); ++i) 
 			{
@@ -97,7 +100,7 @@ int main (int argc, char* argv[]) {
 		}
 		case 7:
 		{
-
+			bucketSort(Array);
 			break;
 		}
 		default:
@@ -115,6 +118,11 @@ int main (int argc, char* argv[]) {
 	}
 
 	filestream.close();
+
+	for(int i = 0; i < Array.size(); ++i) {
+		std::cout << ' ' << Array[i];
+	}
+	std::cout << std::endl; 
 
 	return 0;
 

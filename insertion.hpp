@@ -3,9 +3,10 @@
 
 #include <vector>
 
-void insertionSort(std::vector<int> &A) {
+void insertionSort(std::vector<double> &A) {
 
-	int i, j, key;
+	int i, j;
+	double key;
 	for(j = 1; j < A.size(); ++j) {
 		key = A[j];
 		i = j - 1;
@@ -15,7 +16,7 @@ void insertionSort(std::vector<int> &A) {
 		}
 		A[i+1] = key;
 	}
-
+	
 }
 
 #endif

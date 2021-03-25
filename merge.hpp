@@ -4,7 +4,7 @@
 #include <vector>
 #include <math.h>
 
-void merge(std::vector<int> &A, int p, int q, int r) {
+void merge(std::vector<double> &A, int p, int q, int r) {
 
 	int i, j, k;
 	int n1 = q - p + 1;
@@ -40,7 +40,7 @@ void merge(std::vector<int> &A, int p, int q, int r) {
 
 }
 
-void mergeSort(std::vector<int> &A, int p, int r) {
+void mergeSort(std::vector<double> &A, int p, int r) {
 
 	if(p < r) {
 		int q = (p+r)/2;

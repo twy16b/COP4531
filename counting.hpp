@@ -3,7 +3,7 @@
 
 #include <vector>
 
-void countingSort(std::vector<int> &A, std::vector<int> &B, int k) {
+void countingSort(std::vector<double> &A, std::vector<double> &B, int k) {
 
 	std::vector<int> C (k+1,0);
 

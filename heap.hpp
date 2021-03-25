@@ -9,10 +9,10 @@ int Right(int i) { return 2*i + 2; }
 
 struct Heap {
 
-	std::vector<int> array;
+	std::vector<double> array;
 	int heapSize;
 
-	Heap(std::vector<int> &A) { array = A; heapSize = 0; }
+	Heap(std::vector<double> &A) { array = A; heapSize = 0; }
 
 	int size() { return array.size(); }
 
@@ -54,10 +54,6 @@ void heapSort(Heap &A) {
 		--A.heapSize;
 		maxHeapify(A,0);
 	}
-	for(int i = 0; i < A.size(); ++i) {
-		std::cout << ' ' << A[i];
-	}
-	std::cout << std::endl;
 }
 
 #endif

@@ -9,7 +9,7 @@ int getDigit(int num, int place) {
 	return (int) (num / pow(10,place-1)) % 10;
 }
 
-void radixSort(std::vector<int> &A, int d) {
+void radixSort(std::vector<double> &A, int d) {
 
 	int x, i, j, key;
 	for(x = 1; x <= d; ++x) {
