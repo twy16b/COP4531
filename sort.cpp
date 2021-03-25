@@ -9,6 +9,7 @@
 #include "quicksort.hpp"
 #include "counting.hpp"
 #include "radix.hpp"
+#include "bucket.hpp"
 
 int main (int argc, char* argv[]) {
 
