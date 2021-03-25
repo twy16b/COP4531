@@ -15,6 +15,10 @@ void bucketSort(std::vector<double> &A) {
 	}
 
 	for(int i = 0; i < n; ++i) {
+		if(n*A[i] > n) {
+			std::cout << "Sort failed. Value " << A[i] << " out of range. Must be between 0 and 1." << std::endl;
+			return;
+		}
 		B[n*A[i]].push_back(A[i]);
 	}
 
