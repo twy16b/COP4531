@@ -2,7 +2,6 @@
 #define MERGE_H
 
 #include <vector>
-#include <math.h>
 
 void merge(std::vector<double> &A, int p, int q, int r) {
 

@@ -1,7 +1,6 @@
 #ifndef RADIX_H
 #define RADIX_H
 
-#include <iostream>
 #include <vector>
 #include <cmath>
 
