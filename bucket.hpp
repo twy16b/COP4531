@@ -9,7 +9,7 @@
 void bucketSort(std::vector<double> &A) {
 
 	int n = A.size();
-	std::vector<std::vector<double>> B(n);
+	std::vector<std::vector<double> > B(n);
 	for(int i = 0; i < B.size(); ++i) {
 		B[i].clear();
 	}
@@ -19,7 +19,7 @@ void bucketSort(std::vector<double> &A) {
 			std::cout << "Sort failed. Value " << A[i] << " out of range. Must be between 0 and 1." << std::endl;
 			return;
 		}
-		B[n*A[i]].push_back(A[i]);
+		B[(int)(n*A[i])].push_back(A[i]);
 	}
 
 	for(int i = 0; i < B.size(); ++i) {
