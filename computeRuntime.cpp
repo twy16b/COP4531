@@ -21,8 +21,7 @@ int main () {
 	int sampleSizes[11] = {10,50,100,500,1000,5000,10000,50000,100000,500000,1000000};
 	std::chrono::_V2::system_clock::time_point startTime, endTime;
 
-	printf("ALGORITHM  10         50         100        500        1000       5000       10000      50000      100000     500000     1000000\n");
-	printf("Insertion  ");
+	printf("Insertion,");
 	for(int i = 0; i < 8; ++i) {
 		for(int j = 0; j < sampleSizes[i]; ++j) {
 			sample.push_back((std::rand() + MINVALUE) % MAXVALUE);
@@ -32,14 +31,14 @@ int main () {
 		insertionSort(sample);
 		endTime = std::chrono::high_resolution_clock::now();
 
-		printf("%-10.3f ",std::chrono::duration<double,std::milli>(endTime - startTime).count());
-		std::cout << std::flush;
+		printf("%.3f",std::chrono::duration<double,std::milli>(endTime - startTime).count());
+		if(i < 7) std::cout << ',';
 
 		sample.clear();
 	}
 	std::cout << std::endl;
 
-	printf("Merge      ");
+	printf("Merge,");
 	for(int i = 0; i < 11; ++i) {
 		for(int j = 0; j < sampleSizes[i]; ++j) {
 			sample.push_back((std::rand() + MINVALUE) % MAXVALUE);
@@ -49,14 +48,14 @@ int main () {
 		mergeSort(sample,0,sample.size()-1);
 		endTime = std::chrono::high_resolution_clock::now();
 
-		printf("%-10.3f ",std::chrono::duration<double,std::milli>(endTime - startTime).count());
-		std::cout << std::flush;
+		printf("%.3f",std::chrono::duration<double,std::milli>(endTime - startTime).count());
+		if(i < 10) std::cout << ',';
 
 		sample.clear();
 	}
 	std::cout << std::endl;
 
-	printf("Heap       ");
+	printf("Heap,");
 	for(int i = 0; i < 11; ++i) {
 		for(int j = 0; j < sampleSizes[i]; ++j) {
 			sample.push_back((std::rand() + MINVALUE) % MAXVALUE);
@@ -68,14 +67,14 @@ int main () {
 		endTime = std::chrono::high_resolution_clock::now();
 		sample = H.array;
 
-		printf("%-10.3f ",std::chrono::duration<double,std::milli>(endTime - startTime).count());
-		std::cout << std::flush;
+		printf("%.3f",std::chrono::duration<double,std::milli>(endTime - startTime).count());
+		if(i < 10) std::cout << ',';
 
 		sample.clear();
 	}
 	std::cout << std::endl;
 
-	printf("QuickSort  ");
+	printf("QuickSort,");
 	for(int i = 0; i < 9; ++i) {
 		for(int j = 0; j < sampleSizes[i]; ++j) {
 			sample.push_back((std::rand() + MINVALUE) % MAXVALUE);
@@ -85,14 +84,14 @@ int main () {
 		quickSort(sample,0,sample.size()-1);
 		endTime = std::chrono::high_resolution_clock::now();
 
-		printf("%-10.3f ",std::chrono::duration<double,std::milli>(endTime - startTime).count());
-		std::cout << std::flush;
+		printf("%.3f",std::chrono::duration<double,std::milli>(endTime - startTime).count());
+		if(i < 8) std::cout << ',';
 
 		sample.clear();
 	}
 	std::cout << std::endl;
 
-	printf("Counting   ");
+	printf("Counting,");
 	for(int i = 0; i < 11; ++i) {
 		for(int j = 0; j < sampleSizes[i]; ++j) {
 			sample.push_back((std::rand() + MINVALUE) % MAXVALUE);
@@ -109,14 +108,14 @@ int main () {
 		endTime = std::chrono::high_resolution_clock::now();
 		sample = B;
 
-		printf("%-10.3f ",std::chrono::duration<double,std::milli>(endTime - startTime).count());
-		std::cout << std::flush;
+		printf("%.3f",std::chrono::duration<double,std::milli>(endTime - startTime).count());
+		if(i < 10) std::cout << ',';
 
 		sample.clear();
 	}
 	std::cout << std::endl;
 
-	printf("Radix      ");
+	printf("Radix,");
 	for(int i = 0; i < 6; ++i) {
 		for(int j = 0; j < sampleSizes[i]; ++j) {
 			sample.push_back((std::rand() + MINVALUE) % MAXVALUE);
@@ -131,14 +130,14 @@ int main () {
 		radixSort(sample,d);
 		endTime = std::chrono::high_resolution_clock::now();
 
-		printf("%-10.3f ",std::chrono::duration<double,std::milli>(endTime - startTime).count());
-		std::cout << std::flush;
+		printf("%.3f",std::chrono::duration<double,std::milli>(endTime - startTime).count());
+		if(i < 5) std::cout << ',';
 
 		sample.clear();
 	}
 	std::cout << std::endl;
 
-	printf("Bucket     ");
+	printf("Bucket,");
 	std::default_random_engine randEng;
 	std::uniform_real_distribution<double> range(0.0, 0.9999);
 	for(int i = 0; i < 11; ++i) {
@@ -150,8 +149,8 @@ int main () {
 		bucketSort(sample);
 		endTime = std::chrono::high_resolution_clock::now();
 
-		printf("%-10.3f ",std::chrono::duration<double,std::milli>(endTime - startTime).count());
-		std::cout << std::flush;
+		printf("%.3f",std::chrono::duration<double,std::milli>(endTime - startTime).count());
+		if(i < 10) std::cout << ',';
 
 		sample.clear();
 	}
